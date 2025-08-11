@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.shayari.vista.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_poet_detail"
+            app:destination="@id/navigation_poet_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.shayari.vista.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.shayari.vista.ui.favorites.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_poet_detail"
+        android:name="com.shayari.vista.ui.poetdetail.PoetDetailFragment"
+        android:label="Poet Detail"
+        tools:layout="@layout/fragment_poet_detail">
+        <argument
+            android:name="poetId"
+            app:argType="string" />
+    </fragment>
+
+    <action android:id="@+id/action_global_poet_detail"
+        app:destination="@id/navigation_poet_detail" />
+
+</navigation>
